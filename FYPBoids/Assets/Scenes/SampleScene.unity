@@ -141,15 +141,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2018391110387418411, guid: eb1a620dbacc7534088b3aa8f659fb5a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.1218925
-      objectReference: {fileID: 0}
-    - target: {fileID: 2018391110387418411, guid: eb1a620dbacc7534088b3aa8f659fb5a, type: 3}
-      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2018391110387418411, guid: eb1a620dbacc7534088b3aa8f659fb5a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018391110387418411, guid: eb1a620dbacc7534088b3aa8f659fb5a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.0992911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2018391110387418411, guid: eb1a620dbacc7534088b3aa8f659fb5a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 993517186}
   - component: {fileID: 993517185}
   m_Layer: 0
-  m_Name: Boid
+  m_Name: BoidScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -411,9 +411,9 @@ MonoBehaviour:
   spawnBoids: 100
   boidSpeed: 10
   boidSteeringSpeed: 100
-  boidNoClumpingArea: 10
+  boidNoClumpingArea: 2
   boidLocalArea: 10
-  boidSimulationArea: 50
+  boidSimulationArea: 30
 --- !u!65 &993517186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -485,7 +485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993517184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.315876, y: -3.590702, z: -3.1666355}
+  m_LocalPosition: {x: 0, y: 5, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
