@@ -32,9 +32,13 @@ public class BoidBehaviour : MonoBehaviour
         Vector3 cohesionDirection = Vector3.zero;
         int cohesionCount = 0;
 
+        //Boid leadership/priority to follow
+        var leaderBoid = other[0];
+        var leaderAngle = 180f;
+
         foreach (BoidBehaviour boid in other)
         {
-            //skip self
+            //skip itself
             if (boid == this)
                 continue;
 
@@ -48,13 +52,21 @@ public class BoidBehaviour : MonoBehaviour
             }
 
             //if another boid is generally nearby - ALIGNMENT + COHESION
-            if (distance < LocalAreaRadius)
+            if (distance < LocalAreaRadius && boid.SwarmIndex == this.SwarmIndex)
             {
                 alignmentDirection += boid.transform.forward;
                 alignmentCount++;
 
                 cohesionDirection += boid.transform.position - transform.position;
                 cohesionCount++;
+
+                //identify leading boid
+                var angle = Vector3.Angle(boid.transform.position - transform.position, transform.forward);
+                if (angle < leaderAngle && angle < 90f)
+                {
+                    leaderBoid = boid;
+                    leaderAngle = angle;
+                }
             }
         }
 
@@ -77,17 +89,14 @@ public class BoidBehaviour : MonoBehaviour
         //Keep direction relative to boid's center
         cohesionDirection -= transform.position;
 
-        ////apply separation direction to steering
-        //steering = separationDirection;
-        ////apply alignment direction to steering
-        //steering += alignmentDirection;
-        ////apply cohesion direction to steering
-        //steering += cohesionDirection;
-
-
+        //apply calculated directions, with weight to imapct which rule has more effect
         steering += separationDirection.normalized * SeparationWeight;
         steering += alignmentDirection.normalized * AlignmentWeight;
         steering += cohesionDirection.normalized * CohesionWeight;
+
+        //follow leader if there is one
+        if (leaderBoid != null)
+            steering += (leaderBoid.transform.position - transform.position).normalized;
 
         //apply steering
         if (steering != Vector3.zero)

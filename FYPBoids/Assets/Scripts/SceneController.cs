@@ -63,11 +63,14 @@ public class SceneController : MonoBehaviour
     private void SpawnBoid(GameObject prefab, int swarmIndex)
     {
         var boidInstance = Instantiate(prefab);
+        //Randomize spawn location
         boidInstance.transform.localPosition += new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10));
+        //Randomize spawn rotation
+        boidInstance.transform.localRotation = Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
 
         var boidBehaviour = boidInstance.GetComponent<BoidBehaviour>();
-        //Swarm index is used to track what swarm a boid belongs to if there are multiple
-        boidBehaviour.SwarmIndex = swarmIndex;
+        //Swarm index, set what swarm it should belong to
+        boidBehaviour.SwarmIndex = Random.Range(0, 2);
         boidBehaviour.Speed = boidSpeed;
         boidBehaviour.SteeringSpeed = boidSteeringSpeed;
         boidBehaviour.LocalAreaRadius = boidLocalArea;
