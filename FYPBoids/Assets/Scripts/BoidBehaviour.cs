@@ -33,7 +33,7 @@ public class BoidBehaviour : MonoBehaviour
         int cohesionCount = 0;
 
         //Boid leadership/priority to follow
-        var leaderBoid = other[0];
+        var leaderBoid = (BoidBehaviour)null;
         var leaderAngle = 180f;
 
         foreach (BoidBehaviour boid in other)

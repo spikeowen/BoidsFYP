@@ -411,9 +411,10 @@ MonoBehaviour:
   spawnBoids: 100
   boidSpeed: 10
   boidSteeringSpeed: 100
-  boidNoClumpingArea: 2
+  boidNoClumpingArea: 5
   boidLocalArea: 10
-  boidSimulationArea: 30
+  boidSimulationArea: 50
+  swarmCount: 10
 --- !u!65 &993517186
 BoxCollider:
   m_ObjectHideFlags: 0
