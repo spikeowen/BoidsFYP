@@ -6,14 +6,19 @@ public class BoidBehaviour : MonoBehaviour
 {
     [SerializeField]
     public int SwarmIndex { get; set; }
-    public float NoClumpingRadius { get; set; }
-    public float LocalAreaRadius { get; set; }
     public float Speed { get; set; }
     public float SteeringSpeed { get; set; }
+    public float NoClumpingRadius { get; set; }
+    public float LocalAreaRadius { get; set; }
+
 
     public float SeparationWeight = 0.5f;
     public float AlignmentWeight = 0.25f;
     public float CohesionWeight = 0.25f;
+    /// <summary>
+    /// The boid's alert level for danger
+    /// </summary>
+    public float FearFactor { get; set; }
 
     public void SimulateMovement(List<BoidBehaviour> other, float time)
     {
@@ -28,7 +33,7 @@ public class BoidBehaviour : MonoBehaviour
         Vector3 alignmentDirection = Vector3.zero;
         int alignmentCount = 0;
 
-        //Separation vars and process
+        //Cohesion vars and process
         Vector3 cohesionDirection = Vector3.zero;
         int cohesionCount = 0;
 
@@ -52,7 +57,7 @@ public class BoidBehaviour : MonoBehaviour
             }
 
             //if another boid is generally nearby - ALIGNMENT + COHESION
-            if (distance < LocalAreaRadius && boid.SwarmIndex == this.SwarmIndex)
+            if (distance < LocalAreaRadius * FearFactor && boid.SwarmIndex == this.SwarmIndex)
             {
                 alignmentDirection += boid.transform.forward;
                 alignmentCount++;

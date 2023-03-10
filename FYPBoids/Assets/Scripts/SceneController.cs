@@ -9,14 +9,18 @@ public class SceneController : MonoBehaviour
     public int spawnBoids = 100;
     public float boidSpeed = 10f;
     public float boidSteeringSpeed = 100f;
-    //How close before steering away from others/Swarm density
+    //How close before steering away from others/Swarm density/Vision distance
     public float boidNoClumpingArea = 10f;
-    //Range of influence/Swarm Size
+    //Range of influence/Swarm Size/Pack Loyalty
     public float boidLocalArea = 10f;
     //Boid viewing area
     public float boidSimulationArea = 50f;
     //Number of swarms
     public int swarmCount = 3;
+    //Fear of others/Clumping multiplier
+    public float fearFactor = 1;
+    //Debug to see swarms better
+    public bool randomMode = false;
 
     private List<BoidBehaviour> boidList;
 
@@ -77,11 +81,26 @@ public class SceneController : MonoBehaviour
 
         //Swarm index, set what swarm it should belong to and its stats
         //Note: .Range is inclusive of minimum, exclusive of maximum
-        boidBehaviour.SwarmIndex = Random.Range(0, swarmCount);
-        boidBehaviour.Speed = boidSpeed;
-        boidBehaviour.SteeringSpeed = boidSteeringSpeed;
-        boidBehaviour.LocalAreaRadius = boidLocalArea;
-        boidBehaviour.NoClumpingRadius = boidNoClumpingArea;
+        if (randomMode == true)
+        {
+            boidBehaviour.SwarmIndex = Random.Range(0, swarmCount);
+            boidBehaviour.Speed = Random.Range(1, boidSpeed);
+            boidBehaviour.SteeringSpeed = Random.Range(0, boidSteeringSpeed);
+            boidBehaviour.LocalAreaRadius = Random.Range(0, boidLocalArea);
+
+            boidBehaviour.NoClumpingRadius = boidNoClumpingArea;
+            boidBehaviour.FearFactor = Random.Range(0.5f, fearFactor + 0.5f);
+        }
+        else
+        {
+            boidBehaviour.SwarmIndex = Random.Range(0, swarmCount);
+            boidBehaviour.Speed = boidSpeed;
+            boidBehaviour.SteeringSpeed = boidSteeringSpeed;
+            boidBehaviour.LocalAreaRadius = boidLocalArea;
+
+            boidBehaviour.NoClumpingRadius = boidNoClumpingArea;
+            boidBehaviour.FearFactor = fearFactor;
+        }
 
         //Set to swarm's colour for visibility
         var boidRenderer = boidInstance.GetComponent<Renderer>();
