@@ -24,6 +24,10 @@ public class PredatorBehaviour : MonoBehaviour
         Vector3 separationDirection = Vector3.zero;
         int separationCount = 0;
 
+        //Boid leadership/priority to follow
+        var leaderBoid = (BoidBehaviour)null;
+        var leaderAngle = 180f;
+
         foreach (PredatorBehaviour predator in other)
         {
             //skip itself

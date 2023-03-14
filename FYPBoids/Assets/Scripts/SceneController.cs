@@ -147,6 +147,6 @@ public class SceneController : MonoBehaviour
                 break;
         }
 
-            boidList.Add(boidBehaviour);
+        boidList.Add(boidBehaviour);
     }
 }

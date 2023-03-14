@@ -77,5 +77,7 @@ public class PredatorSceneController : MonoBehaviour
         predatorBehaviour.LocalAreaRadius = predatorLocalArea;
 
         predatorBehaviour.NoClumpingRadius = predatorNoClumpingArea;
+
+        predatorList.Add(predatorBehaviour);
     }
 }
