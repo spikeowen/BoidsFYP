@@ -13,12 +13,15 @@ public class PredatorSceneController : MonoBehaviour
     //How close before steering away from others/Swarm density/Vision distance
     public float predatorNoClumpingArea = 10f;
     //Range of influence/Swarm Size/Pack Loyalty
-    public float predatorLocalArea = 10f;
+    public float predatorLocalArea = 20f;
     //predator viewing area
     public float predatorSimulationArea = 50f;
+    //Area for focusing one boid
+    public float predatorHuntArea = 10f;
 
+    public List<PredatorBehaviour> predatorList;
 
-    private List<PredatorBehaviour> predatorList;
+    private SceneController boidSceneController;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +32,8 @@ public class PredatorSceneController : MonoBehaviour
         {
             SpawnPredator(PredatorPrefab.gameObject);
         }
+
+        boidSceneController = GetComponent<SceneController>();
     }
 
     // Update is called once per frame
@@ -36,7 +41,7 @@ public class PredatorSceneController : MonoBehaviour
     {
         foreach (PredatorBehaviour predator in predatorList)
         {
-            predator.SimulateMovement(predatorList, Time.deltaTime);
+            predator.SimulateMovement(predatorList, Time.deltaTime, boidSceneController.boidList);
 
             //Keeps predators within set area, and loops them to the other side like pacman
             var predatorPos = predator.transform.position;
@@ -75,8 +80,8 @@ public class PredatorSceneController : MonoBehaviour
         predatorBehaviour.Speed = predatorSpeed;
         predatorBehaviour.SteeringSpeed = predatorSteeringSpeed;
         predatorBehaviour.LocalAreaRadius = predatorLocalArea;
-
         predatorBehaviour.NoClumpingRadius = predatorNoClumpingArea;
+        predatorBehaviour.HuntAreaRadius = predatorHuntArea;
 
         predatorList.Add(predatorBehaviour);
     }

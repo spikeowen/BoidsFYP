@@ -22,7 +22,7 @@ public class SceneController : MonoBehaviour
     //Debug to see swarms better
     public bool randomMode = false;
 
-    private List<BoidBehaviour> boidList;
+    public List<BoidBehaviour> boidList;
 
     // Start is called before the first frame update
     void Start()

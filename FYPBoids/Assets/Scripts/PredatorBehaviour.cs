@@ -9,13 +9,13 @@ public class PredatorBehaviour : MonoBehaviour
     public float SteeringSpeed { get; set; }
     public float NoClumpingRadius { get; set; }
     public float LocalAreaRadius { get; set; }
+    public float HuntAreaRadius { get; set; }
 
+    public float SeparationWeight = 0.4f;
+    public float AlignmentWeight = 0.6f;
+    public float CohesionWeight = 0.0f;
 
-    public float SeparationWeight = 1.0f;
-    //public float AlignmentWeight = 0.25f;
-    //public float CohesionWeight = 0.25f;
-
-    public void SimulateMovement(List<PredatorBehaviour> other, float time)
+    public void SimulateMovement(List<PredatorBehaviour> other, float time, List<BoidBehaviour> other2)
     {
         //Steering vars
         var steering = Vector3.zero;
@@ -24,9 +24,17 @@ public class PredatorBehaviour : MonoBehaviour
         Vector3 separationDirection = Vector3.zero;
         int separationCount = 0;
 
-        //Boid leadership/priority to follow
-        var leaderBoid = (BoidBehaviour)null;
-        var leaderAngle = 180f;
+        //Alignment vars and process
+        Vector3 alignmentDirection = Vector3.zero;
+        int alignmentCount = 0;
+
+        //Cohesion vars and process
+        Vector3 cohesionDirection = Vector3.zero;
+        int cohesionCount = 0;
+
+        //Boid priority to follow
+        var priorityBoid = (BoidBehaviour)null;
+        var priorityAngle = 180f;
 
         foreach (PredatorBehaviour predator in other)
         {
@@ -43,18 +51,66 @@ public class PredatorBehaviour : MonoBehaviour
                 separationCount++;
             }
 
+            foreach (BoidBehaviour boid in other2)
+            {
+                var preyDistance = Vector3.Distance(boid.transform.position, predator.transform.position);
+
+                //if boid is within close proximity - ATTACK ONE
+                if (preyDistance < HuntAreaRadius)
+                {
+                    //identify angle to boid
+                    var angle = Vector3.Angle(boid.transform.position - transform.position, transform.forward);
+                    if (angle < priorityAngle && angle < 90f)
+                    {
+                        priorityBoid = boid;
+                        priorityAngle = angle;
+                    }
+                }
+                //if boid is generally nearby - HUNT SWARM
+                else if (preyDistance < LocalAreaRadius)
+                {
+                    alignmentDirection += boid.transform.forward;
+                    alignmentCount++;
+
+                    cohesionDirection += boid.transform.position - transform.position;
+                    cohesionCount++;
+
+                    //identify leading boid
+                    var angle = Vector3.Angle(boid.transform.position - transform.position, transform.forward);
+                    if (angle < priorityAngle && angle < 90f)
+                    {
+                        priorityBoid = boid;
+                        priorityAngle = angle;
+                    }
+                }
+            }
         }
 
         //Calculate average position dependant on the predator(s) that are too close
         //Because if there's more than one, the direction will be too high, getting the average gives the direction that is away from ALL of them
         if (separationCount > 0)
             separationDirection /= separationCount;
-
         //flip and normalize direction
         separationDirection = -separationDirection.normalized;
 
+        //Calculate average position dependant on the boid(s) that are close
+        if (alignmentCount > 0)
+            alignmentDirection /= alignmentCount;
+
+        //Calculate average position dependant on the boid(s) that are close
+        if (cohesionCount > 0)
+            cohesionDirection /= cohesionCount;
+        //Keep direction relative to predator's center
+        cohesionDirection -= transform.position;
+
         //apply calculated directions, with weight to imapct which rule has more effect
         steering += separationDirection.normalized * SeparationWeight;
+        steering += alignmentDirection.normalized * AlignmentWeight;
+        steering += cohesionDirection.normalized * CohesionWeight;
+
+        //follow close boid if there is one, or swarm leader otherwise
+        if (priorityBoid != null)
+            steering += (priorityBoid.transform.position - transform.position).normalized;
 
         //apply steering
         if (steering != Vector3.zero)
