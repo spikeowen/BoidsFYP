@@ -2,31 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-struct Chromosome
+public struct Chromosome
 {
     float speed;
     float steeringSpeed;
     float noClumpingArea;
     float localArea;
     float fearFactor;
+
+    public List<BoidBehaviour> boidGroup;
 }
 
 public class GAScript : MonoBehaviour
 {
+    //const int m_MutationRate = 10; //Percentage
 
-    const float m_MutationRate = 0.01f;
+    List<Chromosome> chromoVector;
 
-   // static vector<Chromosome> m_ChromoVector;
-    //static vector<Chromosome> m_BestChromoVector;
-
-    Chromosome GenerateChromo()
+    public Chromosome GenerateChromo()
     {
         Chromosome chromo = new Chromosome();
+        chromo.boidGroup = new List<BoidBehaviour>();
         return chromo;
     }
-    void GenerateChromoVec()
-    {
 
+    public void GenerateChromoVec(int swarmNo)
+    {
+        for (int i = 0; i < swarmNo; i++)
+        {
+            chromoVector.Add(GenerateChromo());
+        }
     }
 
    // vector<Chromosome> GetChromoVec() { return m_ChromoVector; }

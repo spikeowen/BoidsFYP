@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -7491989239060858416}
   - component: {fileID: -8746749566254025166}
   - component: {fileID: -6720265601290861936}
+  - component: {fileID: 5398564477546542788}
   m_Layer: 0
   m_Name: BoidPrefab
   m_TagString: Untagged
@@ -96,3 +97,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85fe976e9e7c7248ba7f43c01ae24b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SeparationWeight: 0.5
+  AlignmentWeight: 0.25
+  CohesionWeight: 0.25
+--- !u!114 &5398564477546542788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014062749119801346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8556dcdde8680dd4b805ccfd9611ef36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoidPrefab: {fileID: -6720265601290861936}

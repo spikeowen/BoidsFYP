@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoidPrefab: {fileID: -6720265601290861936, guid: eb1a620dbacc7534088b3aa8f659fb5a, type: 3}
+  GAInstance: {fileID: 5398564477546542788, guid: eb1a620dbacc7534088b3aa8f659fb5a, type: 3}
   spawnBoids: 100
   boidSpeed: 10
   boidSteeringSpeed: 100
@@ -344,6 +345,7 @@ MonoBehaviour:
   swarmCount: 10
   fearFactor: 2
   randomMode: 0
+  boidList: []
 --- !u!65 &993517186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -441,3 +443,5 @@ MonoBehaviour:
   predatorNoClumpingArea: 10
   predatorLocalArea: 10
   predatorSimulationArea: 50
+  predatorHuntArea: 10
+  predatorList: []

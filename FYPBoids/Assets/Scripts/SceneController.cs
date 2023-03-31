@@ -5,6 +5,16 @@ using UnityEngine;
 public class SceneController : MonoBehaviour
 {
     public BoidBehaviour BoidPrefab;
+    
+    //List to store swarms as chromos
+    public List<Chromosome> chromoList;
+    //Ticker to regulate what swarm the next boid belongs to
+    private int swarmIterator = 0;
+
+    //C# Rule: You can't call a method defined inside a class without creating an instance of that class
+    //(Unless you declare the method static)
+    public GAScript GAInstance = new GAScript();
+
     [SerializeField]
     public int spawnBoids = 100;
     public float boidSpeed = 10f;
@@ -16,7 +26,7 @@ public class SceneController : MonoBehaviour
     //Boid viewing area
     public float boidSimulationArea = 50f;
     //Number of swarms
-    public int swarmCount = 3;
+    public int swarmCount = 10;
     //Fear of others/Clumping multiplier
     public float fearFactor = 1;
     //Debug to see swarms better
@@ -28,10 +38,25 @@ public class SceneController : MonoBehaviour
     void Start()
     {
         boidList = new List<BoidBehaviour>();
+        chromoList = new List<Chromosome>();
+
+
+        for (int i = 0; i < swarmCount; i++)
+        {
+            chromoList.Add(GAInstance.GenerateChromo());
+        }
+
+        //Generates Chromos to later fill
+        //GAInstance.GenerateChromoVec(swarmCount);
 
         for (int i = 0; i < spawnBoids; i++)
         {
-            SpawnBoid(BoidPrefab.gameObject, 0);
+            SpawnBoid(BoidPrefab.gameObject, swarmIterator);
+            swarmIterator++;
+            if (swarmIterator > swarmCount - 1)
+            {
+                swarmIterator = 0;
+            }
         }
     }
 
@@ -73,7 +98,7 @@ public class SceneController : MonoBehaviour
         boidInstance.transform.localRotation = Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
 
         var boidBehaviour = boidInstance.GetComponent<BoidBehaviour>();
-        //Limit number of swarms
+        //Limit number of swarms/Stop crash if 0
         if (swarmCount < 1)
             swarmCount = 1;
         else if (swarmCount > 10)
@@ -93,7 +118,7 @@ public class SceneController : MonoBehaviour
         }
         else
         {
-            boidBehaviour.SwarmIndex = Random.Range(0, swarmCount);
+            boidBehaviour.SwarmIndex = swarmIndex;
             boidBehaviour.Speed = boidSpeed;
             boidBehaviour.SteeringSpeed = boidSteeringSpeed;
             boidBehaviour.LocalAreaRadius = boidLocalArea;
@@ -148,5 +173,8 @@ public class SceneController : MonoBehaviour
         }
 
         boidList.Add(boidBehaviour);
+        //SHOULD add new boid to a chromosome depending on swarmID
+        chromoList[swarmIndex].boidGroup.Add(boidBehaviour);
+
     }
 }
