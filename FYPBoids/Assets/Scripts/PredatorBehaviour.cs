@@ -38,19 +38,6 @@ public class PredatorBehaviour : MonoBehaviour
 
         foreach (PredatorBehaviour predator in other)
         {
-            //skip itself
-            if (predator == this)
-                continue;
-
-            var distance = Vector3.Distance(predator.transform.position, this.transform.position);
-
-            //if another predator is within close proximity - SEPARATION
-            if (distance < NoClumpingRadius)
-            {
-                separationDirection += predator.transform.position - transform.position;
-                separationCount++;
-            }
-
             foreach (BoidBehaviour boid in other2)
             {
                 var preyDistance = Vector3.Distance(boid.transform.position, predator.transform.position);
@@ -83,6 +70,19 @@ public class PredatorBehaviour : MonoBehaviour
                         priorityAngle = angle;
                     }
                 }
+            }
+
+            //skip itself
+            if (predator == this)
+                continue;
+
+            var distance = Vector3.Distance(predator.transform.position, this.transform.position);
+
+            //if another predator is within close proximity - SEPARATION
+            if (distance < NoClumpingRadius)
+            {
+                separationDirection += predator.transform.position - transform.position;
+                separationCount++;
             }
         }
 
@@ -118,5 +118,11 @@ public class PredatorBehaviour : MonoBehaviour
 
         //move 
         transform.position += transform.TransformDirection(new Vector3(0, 0, Speed)) * time;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.SetActive(false);
+        Debug.Log("Eating");
     }
 }

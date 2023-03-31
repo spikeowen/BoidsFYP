@@ -13,7 +13,7 @@ public struct Chromosome
     public List<BoidBehaviour> boidGroup;
 }
 
-public class GAScript : MonoBehaviour
+public class GAScript
 {
     //const int m_MutationRate = 10; //Percentage
 

@@ -128,7 +128,7 @@ public class SceneController : MonoBehaviour
         }
 
         //Set to swarm's colour for visibility
-        var boidRenderer = boidInstance.GetComponent<Renderer>();
+        var boidRenderer = boidInstance.transform.GetChild(0).GetComponent<Renderer>();
 
         //Custom color using the Color constructor
         Color orange = new Color(1.0f, 0.55f, 0.0f, 1.0f);
@@ -178,3 +178,6 @@ public class SceneController : MonoBehaviour
 
     }
 }
+
+
+//SKYBOX: https://sketchfab.com/3d-models/underwater-skybox-14920ce3ffcc4cb79fb58738341f2c00#download

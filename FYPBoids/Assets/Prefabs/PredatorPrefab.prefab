@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SeparationWeight: 1
+  AlignmentWeight: 0.6
+  CohesionWeight: 0
 --- !u!65 &132249422454406314
 BoxCollider:
   m_ObjectHideFlags: 0

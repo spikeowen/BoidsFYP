@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e76f7e31501da4f44b9c086deaa06ecf, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.49526328, g: 0.61514723, b: 0.7480425, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -335,7 +335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoidPrefab: {fileID: -6720265601290861936, guid: eb1a620dbacc7534088b3aa8f659fb5a, type: 3}
-  GAInstance: {fileID: 5398564477546542788, guid: eb1a620dbacc7534088b3aa8f659fb5a, type: 3}
   spawnBoids: 100
   boidSpeed: 10
   boidSteeringSpeed: 100
@@ -436,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c875697251a8614593935612db8bc89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PredatorPrefab: {fileID: 1352806228668479172, guid: 0bfb533b57d658c4cb18efddae1f08f6, type: 3}
+  PredatorPrefab: {fileID: 4493183039398971317, guid: f015529449708da449c25485cc85551f, type: 3}
   spawnPredators: 1
   predatorSpeed: 11
   predatorSteeringSpeed: 80
