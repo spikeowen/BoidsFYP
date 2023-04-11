@@ -104,8 +104,8 @@ public class SceneController : MonoBehaviour
         else if (swarmCount > 10)
             swarmCount = 10;
 
-        //Swarm index, set what swarm it should belong to and its stats
-        //Note: .Range is inclusive of minimum, exclusive of maximum
+        //Swarm index, sets what swarm it should belong to
+        //Note to self: .Range is inclusive of minimum, exclusive of maximum
         if (randomMode == true)
         {
             boidBehaviour.SwarmIndex = Random.Range(0, swarmCount);

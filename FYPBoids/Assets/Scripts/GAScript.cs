@@ -4,12 +4,6 @@ using UnityEngine;
 
 public struct Chromosome
 {
-    float speed;
-    float steeringSpeed;
-    float noClumpingArea;
-    float localArea;
-    float fearFactor;
-
     public List<BoidBehaviour> boidGroup;
 }
 
@@ -34,5 +28,14 @@ public class GAScript
         }
     }
 
-   // vector<Chromosome> GetChromoVec() { return m_ChromoVector; }
+    public void SelectionPerSwarm(List<Chromosome> chromoVector)
+    {
+        for (int i = 0; i < chromoVector.Count; i++)
+        {
+            for (int j = 0; j < chromoVector[i].boidGroup.Count; j++)
+            {
+                bool isActive = chromoVector[i].boidGroup[i].gameObject.activeSelf;
+            }
+        }
+    }
 }
