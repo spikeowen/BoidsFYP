@@ -130,7 +130,7 @@ public class SceneController : MonoBehaviour
         //Set to swarm's colour for visibility
         var boidRenderer = boidInstance.transform.GetChild(0).GetComponent<Renderer>();
 
-        //Custom color using the Color constructor
+        //Custom color using the Color constructor (RGBA)
         Color orange = new Color(1.0f, 0.55f, 0.0f, 1.0f);
         Color purple = new Color(0.6f, 0.0f, 1.0f, 1.0f);
         Color pink = new Color(1.0f, 0.0f, 0.78f, 1.0f);
