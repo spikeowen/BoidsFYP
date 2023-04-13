@@ -12,7 +12,7 @@ public class GAScript
 {
     //const int m_MutationRate = 10; //Percentage
 
-    List<Chromosome> GAChromoVector;
+    //List<Chromosome> GAChromoVector;
     //public void GenerateChromoVec(int swarmNo)
     //{
     //    for (int i = 0; i < swarmNo; i++)
@@ -20,6 +20,8 @@ public class GAScript
     //        GAChromoVector.Add(GenerateChromo());
     //    }
     //}
+
+    List<Chromosome> BestChromoVector;
 
     public Chromosome GenerateChromo()
     {
@@ -31,19 +33,21 @@ public class GAScript
 
     public void SelectionPerSwarm(List<Chromosome> chromoVector)
     {
-        GAChromoVector = chromoVector;
+        int score;
         for (int i = 0; i < chromoVector.Count; i++)
         {
+            score = 0;
             for (int j = 0; j < chromoVector[i].boidGroup.Count; j++)
             {
                 bool isActive = chromoVector[i].boidGroup[j].gameObject.activeSelf;
                 if (isActive == true)
                 {
-                    Chromosome temp = chromoVector[i];
-                    temp.swarmScore++;
-                    chromoVector[i] = temp;
+                    score++;
                 }
             }
+            Chromosome temp = chromoVector[i];
+            temp.swarmScore = score;
+            chromoVector[i] = temp;
         }
 
         List<Chromosome> bestChromos = new List<Chromosome>();
@@ -82,6 +86,23 @@ public class GAScript
             {
                 fifth = chromoVector[i];
             }
+        }
+
+        if (BestChromoVector.Count < 1)
+        {
+            BestChromoVector.Add(first);
+            BestChromoVector.Add(second);
+            BestChromoVector.Add(third);
+            BestChromoVector.Add(fourth);
+            BestChromoVector.Add(fifth);
+        }
+        else
+        {
+            BestChromoVector[0] = first;
+            BestChromoVector[1] = second;
+            BestChromoVector[2] = third;
+            BestChromoVector[3] = fourth;
+            BestChromoVector[4] = fifth;
         }
     }
 }
