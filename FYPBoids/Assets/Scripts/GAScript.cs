@@ -31,7 +31,7 @@ public class GAScript
         return chromo;
     }
 
-    public void SelectionPerSwarm(List<Chromosome> chromoVector)
+    public void RankedSelection(List<Chromosome> chromoVector)
     {
         int score;
         for (int i = 0; i < chromoVector.Count; i++)
@@ -105,4 +105,34 @@ public class GAScript
             BestChromoVector[4] = fifth;
         }
     }
+}
+
+
+public void TournamentSelection(List<Chromosome> chromoVector)
+{
+    int score;
+    for (int i = 0; i < chromoVector.Count; i++)
+    {
+        score = 0;
+        for (int j = 0; j < chromoVector[i].boidGroup.Count; j++)
+        {
+            bool isActive = chromoVector[i].boidGroup[j].gameObject.activeSelf;
+            if (isActive == true)
+            {
+                score++;
+            }
+        }
+        Chromosome temp = chromoVector[i];
+        temp.swarmScore = score;
+        chromoVector[i] = temp;
+    }
+
+    List<Chromosome> bestChromos = new List<Chromosome>();
+    Chromosome first = new Chromosome(), second = new Chromosome(), third = new Chromosome(), fourth = new Chromosome(), fifth = new Chromosome();
+
+    //for (int i = 0; i < chromoVector.Count; i++)
+    //{
+
+    //}
+}
 }
