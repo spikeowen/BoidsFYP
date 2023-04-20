@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour
 {
@@ -33,6 +34,10 @@ public class SceneController : MonoBehaviour
     public bool randomMode = false;
     //Timer to limit how long 1 simulation lasts for
     public float simTimer = 60.0f;
+    public Text timerText;
+    //Counter to know what generation the fish are on
+    public int generationCount = 0;
+    public Text generationText;
 
 
     public List<BoidBehaviour> boidList;
@@ -92,12 +97,15 @@ public class SceneController : MonoBehaviour
         }
 
         simTimer -= Time.deltaTime;
+        timerText.text = "Timer: " + simTimer.ToString();
+        generationText.text = "Generation: " + generationCount.ToString();
 
         if (simTimer <= 0.0f)
         {
             //Run GA and reset
             GAInstance.TournamentSelection(chromoList);
             simTimer = 60.0f;
+            generationCount++;
         }
     }
 
