@@ -31,6 +31,9 @@ public class SceneController : MonoBehaviour
     public float fearFactor = 1;
     //Debug to see swarms better
     public bool randomMode = false;
+    //Timer to limit how long 1 simulation lasts for
+    public float simTimer = 60.0f;
+
 
     public List<BoidBehaviour> boidList;
 
@@ -86,6 +89,15 @@ public class SceneController : MonoBehaviour
                 boidPos.z += boidSimulationArea * 2;
 
             boid.transform.position = boidPos;
+        }
+
+        simTimer -= Time.deltaTime;
+
+        if (simTimer <= 0.0f)
+        {
+            //Run GA and reset
+            GAInstance.TournamentSelection(chromoList);
+            simTimer = 60.0f;
         }
     }
 
