@@ -22,8 +22,8 @@ public class BoidBehaviour : MonoBehaviour
 
     public void DeepCopy(BoidBehaviour other)
     {
-        //NEEDS FIX
-        SwarmIndex = other.SwarmIndex;
+        //Swarm of child boid doesn't matter as it messes up after selection
+        //SwarmIndex = other.SwarmIndex;
         Speed = other.Speed;
         SteeringSpeed = other.SteeringSpeed;
         NoClumpingRadius = other.NoClumpingRadius;
