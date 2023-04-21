@@ -20,6 +20,18 @@ public class BoidBehaviour : MonoBehaviour
     /// </summary>
     public float FearFactor { get; set; }
 
+    public void DeepCopy(BoidBehaviour other)
+    {
+        //NEEDS FIX
+        SwarmIndex = other.SwarmIndex;
+        Speed = other.Speed;
+        SteeringSpeed = other.SteeringSpeed;
+        NoClumpingRadius = other.NoClumpingRadius;
+        LocalAreaRadius = other.LocalAreaRadius;
+        FearFactor = other.FearFactor;
+    }
+
+
     public void SimulateMovement(List<BoidBehaviour> other, float time)
     {
         //Steering vars
@@ -111,7 +123,6 @@ public class BoidBehaviour : MonoBehaviour
         transform.position += transform.TransformDirection(new Vector3(0, 0, Speed)) * time;
     }
 }
-
 
 // Research Links in case
 //https://blog.yarsalabs.com/flock-simulation-using-boids-in-unity/#:~:text=Boid%20simulation%20is%20the%20simulation,controlled%20by%20a%20single%20creature.

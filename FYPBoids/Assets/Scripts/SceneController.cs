@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,7 @@ public class SceneController : MonoBehaviour
     //Ticker to regulate what swarm the next boid belongs to
     private int swarmIterator = 0;
 
+    public List<BoidBehaviour> newGenList;
     //C# Rule: You can't call a method defined inside a class without creating an instance of that class
     //(Unless you declare the method static)
     public GAScript GAInstance = new GAScript();
@@ -37,7 +39,7 @@ public class SceneController : MonoBehaviour
     //Debug to see swarms better
     public bool randomMode = false;
     //Timer to limit how long 1 simulation lasts for
-    public float simTimer = 60.0f;
+    public float simTimer = 1.0f;
     public Text timerText;
     //Counter to know what generation the fish are on
     public int generationCount = 0;
@@ -106,7 +108,17 @@ public class SceneController : MonoBehaviour
             //Run GA and reset
             GAInstance.TournamentSelection(chromoList);
             chromoList = GAInstance.TournamentCrossover();
-            simTimer = 60.0f;
+            simTimer = 10.0f;
+
+            chromoList.ToList().ForEach(i => newGenList.AddRange(i.boidGroup));
+            for (int i = 0; i < boidList.Count; i++)
+            {
+                boidList[i].gameObject.GetComponent<BoidBehaviour>().DeepCopy(newGenList[i]);
+                boidList[i].gameObject.SetActive(true);
+            }
+
+            newGenList.Clear();
+            //Debug.Log(boidList.Count);
             generationCount++;
         }
     }

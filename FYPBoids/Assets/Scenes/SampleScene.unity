@@ -585,6 +585,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoidPrefab: {fileID: -6720265601290861936, guid: eb1a620dbacc7534088b3aa8f659fb5a, type: 3}
+  boidList: []
+  newGenList: []
   spawnBoids: 100
   boidSpeed: 10
   boidSteeringSpeed: 100
@@ -594,11 +596,10 @@ MonoBehaviour:
   swarmCount: 10
   fearFactor: 2
   randomMode: 0
-  simTimer: 60
+  simTimer: 10
   timerText: {fileID: 689761201}
   generationCount: 0
   generationText: {fileID: 1838348932}
-  boidList: []
 --- !u!65 &993517186
 BoxCollider:
   m_ObjectHideFlags: 0

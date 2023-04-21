@@ -128,7 +128,7 @@ public class GAScript
             Chromosome temp = tempVector[i];
             temp.swarmScore = score;
             tempVector[i] = temp;
-            Debug.Log("Swarm No: " + i + " Swarm Score: " + score);
+            //Debug.Log("Swarm No: " + i + " Swarm Score: " + score);
         }
 
         List<Chromosome> bestChromos = new List<Chromosome>();
@@ -193,6 +193,9 @@ public class GAScript
             child2 = Mutation(child2);
             newChromoList.Add(child1);
             newChromoList.Add(child2);
+            //CHILDREN HAVE WRONG SWARM INDEX
+            Debug.Log("Child1 Swarm: " + child1.boidGroup[0].SwarmIndex);
+            Debug.Log("Child2 Swarm: " + child2.boidGroup[0].SwarmIndex);
         }
 
         return newChromoList;
