@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Current STATUS: Program runs, boids don't reactivate and yet new gens have diff swarm scores
+//Need to pass boids back to overwrite and reactivate boids in scene
+
 public class SceneController : MonoBehaviour
 {
     public BoidBehaviour BoidPrefab;
-    
+
+    public List<BoidBehaviour> boidList;
     //List to store swarms as chromos
     public List<Chromosome> chromoList;
     //Ticker to regulate what swarm the next boid belongs to
@@ -39,9 +43,6 @@ public class SceneController : MonoBehaviour
     public int generationCount = 0;
     public Text generationText;
 
-
-    public List<BoidBehaviour> boidList;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -71,7 +72,7 @@ public class SceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (BoidBehaviour boid in boidList)
+        foreach (BoidBehaviour boid in boidList)//DEAR FUTURE: NEED TO COPY FROM CHROMOSOME TO BOID
         {
             boid.SimulateMovement(boidList, Time.deltaTime);
 
@@ -104,6 +105,7 @@ public class SceneController : MonoBehaviour
         {
             //Run GA and reset
             GAInstance.TournamentSelection(chromoList);
+            chromoList = GAInstance.TournamentCrossover();
             simTimer = 60.0f;
             generationCount++;
         }

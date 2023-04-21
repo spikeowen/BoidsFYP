@@ -123,6 +123,6 @@ public class PredatorBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         other.gameObject.SetActive(false);
-        Debug.Log("Eating");
+        //Debug.Log("Eating");
     }
 }

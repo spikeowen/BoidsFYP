@@ -16,7 +16,7 @@ public class BoidBehaviour : MonoBehaviour
     public float AlignmentWeight = 0.25f;
     public float CohesionWeight = 0.25f;
     /// <summary>
-    /// The boid's alert level for danger
+    /// The boid's alert level for danger/anxiety of being in a group
     /// </summary>
     public float FearFactor { get; set; }
 
