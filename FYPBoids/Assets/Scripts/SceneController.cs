@@ -21,6 +21,7 @@ public class SceneController : MonoBehaviour
     //C# Rule: You can't call a method defined inside a class without creating an instance of that class
     //(Unless you declare the method static)
     public GAScript GAInstance = new GAScript();
+    public float simReset;
 
     [SerializeField]
     public int spawnBoids = 100;
@@ -39,26 +40,26 @@ public class SceneController : MonoBehaviour
     //Debug to see swarms better
     public bool randomMode = false;
     //Timer to limit how long 1 simulation lasts for
-    public float simTimer = 1.0f;
+    public float simTimer = 60.0f;
     public Text timerText;
     //Counter to know what generation the fish are on
     public int generationCount = 0;
     public Text generationText;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         boidList = new List<BoidBehaviour>();
         chromoList = new List<Chromosome>();
+        simReset = simTimer;
 
-
+        //Generates Chromos for GA to use later
         for (int i = 0; i < swarmCount; i++)
         {
             chromoList.Add(GAInstance.GenerateChromo());
         }
 
-        //Generates Chromos to later fill
-        //GAInstance.GenerateChromoVec(swarmCount);
 
         for (int i = 0; i < spawnBoids; i++)
         {
@@ -106,20 +107,30 @@ public class SceneController : MonoBehaviour
         if (simTimer <= 0.0f)
         {
             //Run GA and reset
+            GAInstance.RecordLine("Generation Number: " + generationCount.ToString());
             GAInstance.TournamentSelection(chromoList);
             chromoList = GAInstance.TournamentCrossover();
-            simTimer = 10.0f;
+            simTimer = simReset;
 
             chromoList.ToList().ForEach(i => newGenList.AddRange(i.boidGroup));
+
+            chromoList.Clear();
+            for (int i = 0; i < swarmCount; i++)
+            {
+                chromoList.Add(GAInstance.GenerateChromo());
+            }
+
             for (int i = 0; i < boidList.Count; i++)
             {
                 boidList[i].gameObject.GetComponent<BoidBehaviour>().DeepCopy(newGenList[i]);
                 boidList[i].gameObject.SetActive(true);
+                chromoList[boidList[i].SwarmIndex].boidGroup.Add(boidList[i]);
             }
 
             newGenList.Clear();
-            //Debug.Log(boidList.Count);
             generationCount++;
+            //Debug.Log(boidList.Count);
+            //chromoList[swarmIndex].boidGroup.Add(boidBehaviour);
         }
     }
 

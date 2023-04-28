@@ -31,6 +31,16 @@ public class BoidBehaviour : MonoBehaviour
         FearFactor = other.FearFactor;
     }
 
+    public void ReverseDeepCopy(BoidBehaviour other)
+    {
+        //Swarm of child boid doesn't matter as it messes up after selection
+        //SwarmIndex = other.SwarmIndex;
+        Speed = other.Speed;
+        SteeringSpeed = other.SteeringSpeed;
+        NoClumpingRadius = other.NoClumpingRadius;
+        LocalAreaRadius = other.LocalAreaRadius;
+        FearFactor = other.FearFactor;
+    }
 
     public void SimulateMovement(List<BoidBehaviour> other, float time)
     {

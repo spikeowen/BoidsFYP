@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public struct Chromosome
 {
@@ -32,6 +33,16 @@ public class GAScript
         chromo.boidGroup = new List<BoidBehaviour>();
         chromo.swarmScore = 0;
         return chromo;
+    }
+
+    public void RecordLine(string entry)
+    {
+        string path = "Results.txt";
+        //Write some text to the test.txt file
+        StreamWriter writer = new StreamWriter(path, true);
+        writer.WriteLine(entry);
+        writer.Close();
+        //StreamReader reader = new StreamReader(path);
     }
 
     public void RankedSelection(List<Chromosome> chromoVector)
@@ -114,6 +125,7 @@ public class GAScript
         List<Chromosome> tempVector = new List<Chromosome>();
         tempVector = chromoVector;
         int score = 0;
+        RecordLine("------------------------------");
         for (int i = 0; i < tempVector.Count; i++)
         {
             score = 0;
@@ -128,6 +140,8 @@ public class GAScript
             Chromosome temp = tempVector[i];
             temp.swarmScore = score;
             tempVector[i] = temp;
+            string result = "Swarm No: " + i.ToString() + " Swarm Score: " + score.ToString();
+            RecordLine(result);
             //Debug.Log("Swarm No: " + i + " Swarm Score: " + score);
         }
 
@@ -193,9 +207,9 @@ public class GAScript
             child2 = Mutation(child2);
             newChromoList.Add(child1);
             newChromoList.Add(child2);
-            //CHILDREN HAVE WRONG SWARM INDEX
-            Debug.Log("Child1 Swarm: " + child1.boidGroup[0].SwarmIndex);
-            Debug.Log("Child2 Swarm: " + child2.boidGroup[0].SwarmIndex);
+            //CHILDREN HAVE WRONG SWARM INDEX BUT DOESN'T MATTER
+            //Debug.Log("Child1 Swarm: " + child1.boidGroup[0].SwarmIndex);
+            //Debug.Log("Child2 Swarm: " + child2.boidGroup[0].SwarmIndex);
         }
 
         return newChromoList;
@@ -289,4 +303,5 @@ public class GAScript
         }
         return child;
     }
+
 }

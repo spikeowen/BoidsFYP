@@ -1,0 +1,48 @@
+Generation Number: 0
+------------------------------
+Swarm No: 0 Swarm Score: 9
+Swarm No: 1 Swarm Score: 5
+Swarm No: 2 Swarm Score: 10
+Swarm No: 3 Swarm Score: 10
+Swarm No: 4 Swarm Score: 10
+Swarm No: 5 Swarm Score: 8
+Swarm No: 6 Swarm Score: 10
+Swarm No: 7 Swarm Score: 10
+Swarm No: 8 Swarm Score: 10
+Swarm No: 9 Swarm Score: 10
+Generation Number: 1
+------------------------------
+Swarm No: 0 Swarm Score: 10
+Swarm No: 1 Swarm Score: 10
+Swarm No: 2 Swarm Score: 10
+Swarm No: 3 Swarm Score: 9
+Swarm No: 4 Swarm Score: 9
+Swarm No: 5 Swarm Score: 10
+Swarm No: 6 Swarm Score: 10
+Swarm No: 7 Swarm Score: 10
+Swarm No: 8 Swarm Score: 10
+Swarm No: 9 Swarm Score: 9
+Generation Number: 2
+------------------------------
+Swarm No: 0 Swarm Score: 2
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 10
+Swarm No: 3 Swarm Score: 8
+Swarm No: 4 Swarm Score: 2
+Swarm No: 5 Swarm Score: 9
+Swarm No: 6 Swarm Score: 10
+Swarm No: 7 Swarm Score: 10
+Swarm No: 8 Swarm Score: 10
+Swarm No: 9 Swarm Score: 10
+Generation Number: 3
+------------------------------
+Swarm No: 0 Swarm Score: 2
+Swarm No: 1 Swarm Score: 9
+Swarm No: 2 Swarm Score: 10
+Swarm No: 3 Swarm Score: 9
+Swarm No: 4 Swarm Score: 10
+Swarm No: 5 Swarm Score: 10
+Swarm No: 6 Swarm Score: 9
+Swarm No: 7 Swarm Score: 2
+Swarm No: 8 Swarm Score: 9
+Swarm No: 9 Swarm Score: 10
