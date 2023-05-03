@@ -24,8 +24,9 @@ public class GAScript
 
     //List<Chromosome> NewGenList;
 
-    List<Chromosome> BestChromoTournament;
-    List<Chromosome> BestChromoRank;
+    public List<Chromosome> BestChromoTournament;
+    public List<Chromosome> BestChromoRank;
+    public List<Chromosome> BestChromoRoulette;
 
     public Chromosome GenerateChromo()
     {
@@ -47,103 +48,66 @@ public class GAScript
 
     public void RankedSelection(List<Chromosome> chromoVector)
     {
-        int score;
-        for (int i = 0; i < chromoVector.Count; i++)
-        {
-            score = 0;
-            for (int j = 0; j < chromoVector[i].boidGroup.Count; j++)
-            {
-                bool isActive = chromoVector[i].boidGroup[j].gameObject.activeSelf;
-                if (isActive == true)
-                {
-                    score++;
-                }
-            }
-            Chromosome temp = chromoVector[i];
-            temp.swarmScore = score;
-            chromoVector[i] = temp;
-        }
+        List<Chromosome> tempVector = new List<Chromosome>();
+        tempVector = GetScores(chromoVector);
 
         List<Chromosome> bestChromos = new List<Chromosome>();
         Chromosome first = new Chromosome(), second = new Chromosome(), third = new Chromosome(), fourth = new Chromosome(), fifth = new Chromosome();
 
-        for (int i = 0; i < chromoVector.Count; i++)
+        for (int i = 0; i < tempVector.Count; i++)
         {
-            int scoreToCompare = chromoVector[i].swarmScore;
+            int scoreToCompare = tempVector[i].swarmScore;
             if (scoreToCompare > first.swarmScore)
             {
                 fifth = fourth;
                 fourth = third;
                 third = second;
                 second = first;
-                first = chromoVector[i];
+                first = tempVector[i];
             }
             else if (scoreToCompare > second.swarmScore)
             {
                 fifth = fourth;
                 fourth = third;
                 third = second;
-                second = chromoVector[i];
+                second = tempVector[i];
             }
             else if (scoreToCompare > third.swarmScore)
             {
                 fifth = fourth;
                 fourth = third;
-                third = chromoVector[i];
+                third = tempVector[i];
             }
             else if (scoreToCompare > fourth.swarmScore)
             {
                 fifth = fourth;
-                fourth = chromoVector[i];
+                fourth = tempVector[i];
             }
-            else if (scoreToCompare > fourth.swarmScore)
+            else if (scoreToCompare > fifth.swarmScore)
             {
-                fifth = chromoVector[i];
+                fifth = tempVector[i];
             }
         }
 
-        if (bestChromos.Count < 1)
-        {
-            bestChromos.Add(first);
-            bestChromos.Add(second);
-            bestChromos.Add(third);
-            bestChromos.Add(fourth);
-            bestChromos.Add(fifth);
-        }
-        else
-        {
-            bestChromos[0] = first;
-            bestChromos[1] = second;
-            bestChromos[2] = third;
-            bestChromos[3] = fourth;
-            bestChromos[4] = fifth;
-        }
+        bestChromos.Add(first);
+        bestChromos.Add(second);
+        bestChromos.Add(third);
+        bestChromos.Add(fourth);
+        bestChromos.Add(fifth);
+        bestChromos.Add(first);
+        bestChromos.Add(second);
+        bestChromos.Add(third);
+        bestChromos.Add(fourth);
+        bestChromos.Add(fifth);
+
+        //Stops the need to clear and reset lists every time
+        BestChromoRank = bestChromos;
     }
 
     public void TournamentSelection(List<Chromosome> chromoVector)
     {
         List<Chromosome> tempVector = new List<Chromosome>();
-        tempVector = chromoVector;
-        int score = 0;
-        RecordLine("------------------------------");
-        for (int i = 0; i < tempVector.Count; i++)
-        {
-            score = 0;
-            for (int j = 0; j < tempVector[i].boidGroup.Count; j++)
-            {
-                bool isActive = tempVector[i].boidGroup[j].gameObject.activeSelf;
-                if (isActive == true)
-                {
-                    score++;
-                }
-            }
-            Chromosome temp = tempVector[i];
-            temp.swarmScore = score;
-            tempVector[i] = temp;
-            string result = "Swarm No: " + i.ToString() + " Swarm Score: " + score.ToString();
-            RecordLine(result);
-            //Debug.Log("Swarm No: " + i + " Swarm Score: " + score);
-        }
+        tempVector = GetScores(chromoVector);
 
         List<Chromosome> bestChromos = new List<Chromosome>();
         int tScore1, tScore2, tScore3;
@@ -177,17 +141,29 @@ public class GAScript
                 bestChromos.Add(tempVector[c]);
             }
         }
+        //Stops the need to clear and reset lists every time
         BestChromoTournament = bestChromos;
     }
 
-    public List<Chromosome> TournamentCrossover()
+    public List<Chromosome> Crossover(List<Chromosome> bestList)
     {
         List<Chromosome> newChromoList = new List<Chromosome>();
 
-        for (int i = 0; i < BestChromoTournament.Count; i+=2)
+        for (int i = 0; i < bestList.Count; i += 2)
         {
-            Chromosome parent1 = BestChromoTournament[i];
-            Chromosome parent2 = BestChromoTournament[i + 1];
+            Chromosome parent1;
+            Chromosome parent2;
+            //IN CASE ODD NUMBER OF SWARMS
+            if (i + 1 > bestList.Count)
+            {
+                parent1 = bestList[i];
+                parent2 = bestList[i - 1];
+            }
+            else
+            {
+                parent1 = bestList[i];
+                parent2 = bestList[i + 1];
+            }
             Chromosome child1 = new Chromosome();
             Chromosome child2 = new Chromosome();
             child1.boidGroup = parent1.boidGroup;
@@ -202,7 +178,7 @@ public class GAScript
                 child2.boidGroup[j].SteeringSpeed = parent1.boidGroup[j].SteeringSpeed;
                 child2.boidGroup[j].LocalAreaRadius = parent1.boidGroup[j].LocalAreaRadius;
             }
-            //ADD MUTATION FUNC BEFORE ADDING TO LIST
+            //MUST ADD MUTATION FUNC BEFORE ADDING TO LIST
             child1 = Mutation(child1);
             child2 = Mutation(child2);
             newChromoList.Add(child1);
@@ -304,4 +280,71 @@ public class GAScript
         return child;
     }
 
+    public void RouletteSelection(List<Chromosome> chromoVector)
+    {
+        List<Chromosome> tempVector = new List<Chromosome>();
+        tempVector = GetScores(chromoVector);
+
+        //Have to get the survivor total out side of getscores() for roulette to work
+        int totalSurvivors = 0;
+        for (int i = 0; i < tempVector.Count; i++)
+        {
+            Chromosome temp = tempVector[i];
+            totalSurvivors += temp.swarmScore; 
+        }
+
+        List<Chromosome> bestChromos = new List<Chromosome>();
+        for (int i = 0; i < tempVector.Count; i++)
+        {
+            int random = Random.Range(0, totalSurvivors);
+            int runningSurvivors = 0;
+            for (int j = 0; j < tempVector.Count; j++)
+            {
+                Chromosome temp = tempVector[j];
+                runningSurvivors += temp.swarmScore;
+                if (random <= runningSurvivors)
+                {
+                    bestChromos.Add(temp);
+                    break;
+                }
+            }
+        }
+        //Stops the need to clear and reset lists every time
+        BestChromoRoulette = bestChromos;
+    }
+
+    public List<Chromosome> GetScores(List<Chromosome> chromo)
+    {
+        List<Chromosome> tempVector = new List<Chromosome>();
+        tempVector = chromo;
+        int score = 0;
+        int totalSurvivors = 0;
+        int totalInput = 0;
+        RecordLine("------------------------------");
+        for (int i = 0; i < tempVector.Count; i++)
+        {
+            score = 0;
+            for (int j = 0; j < tempVector[i].boidGroup.Count; j++)
+            {
+                bool isActive = tempVector[i].boidGroup[j].gameObject.activeSelf;
+                if (isActive == true)
+                {
+                    score++;
+                }
+                totalInput++;
+            }
+            totalSurvivors += score;
+            Chromosome temp = tempVector[i];
+            temp.swarmScore = score;
+            tempVector[i] = temp;
+            string result = "Swarm No: " + i.ToString() + " Swarm Score: " + score.ToString();
+            RecordLine(result);
+        }
+
+        float percentage = (totalSurvivors / totalInput) * 100;
+        string result2 = "Total Survived: " + totalSurvivors.ToString() + "/" + totalInput.ToString() + " Percentage: " + percentage.ToString() + "%";
+        RecordLine(result2);
+
+        return tempVector;
+    }
 }

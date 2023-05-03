@@ -588,6 +588,8 @@ MonoBehaviour:
   boidList: []
   newGenList: []
   simReset: 0
+  tournamentMode: 1
+  rouletteMode: 0
   spawnBoids: 100
   boidSpeed: 10
   boidSteeringSpeed: 100
@@ -596,8 +598,8 @@ MonoBehaviour:
   boidSimulationArea: 50
   swarmCount: 10
   fearFactor: 2
-  randomMode: 0
-  simTimer: 60
+  randomMode: 1
+  simTimer: 10
   timerText: {fileID: 689761201}
   generationCount: 0
   generationText: {fileID: 1838348932}

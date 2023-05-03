@@ -24,6 +24,8 @@ public class SceneController : MonoBehaviour
     public float simReset;
 
     [SerializeField]
+    public bool tournamentMode = true;
+    public bool rouletteMode = false;
     public int spawnBoids = 100;
     public float boidSpeed = 10f;
     public float boidSteeringSpeed = 100f;
@@ -38,7 +40,7 @@ public class SceneController : MonoBehaviour
     //Fear of others/Clumping multiplier
     public float fearFactor = 1;
     //Debug to see swarms better
-    public bool randomMode = false;
+    public bool randomMode = true;
     //Timer to limit how long 1 simulation lasts for
     public float simTimer = 60.0f;
     public Text timerText;
@@ -75,7 +77,7 @@ public class SceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (BoidBehaviour boid in boidList)//DEAR FUTURE: NEED TO COPY FROM CHROMOSOME TO BOID
+        foreach (BoidBehaviour boid in boidList)
         {
             boid.SimulateMovement(boidList, Time.deltaTime);
 
@@ -107,14 +109,39 @@ public class SceneController : MonoBehaviour
         if (simTimer <= 0.0f)
         {
             //Run GA and reset
-            GAInstance.RecordLine("Generation Number: " + generationCount.ToString());
-            GAInstance.TournamentSelection(chromoList);
-            chromoList = GAInstance.TournamentCrossover();
-            simTimer = simReset;
+            if (tournamentMode == true)
+            {
+                if(generationCount == 0)
+                {
+                    GAInstance.RecordLine("-----TOURNAMENT SELECTION-----");
+                }
+                GAInstance.RecordLine("Generation Number: " + generationCount.ToString());
+                GAInstance.TournamentSelection(chromoList);
+                chromoList = GAInstance.Crossover(GAInstance.BestChromoTournament);
+            }
+            else if (rouletteMode == true)
+            {
+                if (generationCount == 0)
+                {
+                    GAInstance.RecordLine("-----ROULETTE SELECTION-----");
+                }
+                GAInstance.RouletteSelection(chromoList);
+                chromoList = GAInstance.Crossover(GAInstance.BestChromoRoulette);
+            }
+            else
+            {
+                if (generationCount == 0)
+                {
+                    GAInstance.RecordLine("-----RANKED SELECTION-----");
+                }
+                GAInstance.RankedSelection(chromoList);
+                chromoList = GAInstance.Crossover(GAInstance.BestChromoRank);
+            }
 
+            //Copy the new chromos back into scene
             chromoList.ToList().ForEach(i => newGenList.AddRange(i.boidGroup));
-
             chromoList.Clear();
+            //Recreate scene's chromo list and refill with new generation ready for next cycle
             for (int i = 0; i < swarmCount; i++)
             {
                 chromoList.Add(GAInstance.GenerateChromo());
@@ -129,6 +156,7 @@ public class SceneController : MonoBehaviour
 
             newGenList.Clear();
             generationCount++;
+            simTimer = simReset;
             //Debug.Log(boidList.Count);
             //chromoList[swarmIndex].boidGroup.Add(boidBehaviour);
         }
@@ -153,7 +181,7 @@ public class SceneController : MonoBehaviour
         //Note to self: .Range is inclusive of minimum, exclusive of maximum
         if (randomMode == true)
         {
-            boidBehaviour.SwarmIndex = Random.Range(0, swarmCount);
+            boidBehaviour.SwarmIndex = swarmIndex;
             boidBehaviour.Speed = Random.Range(1, boidSpeed);
             boidBehaviour.SteeringSpeed = Random.Range(0, boidSteeringSpeed);
             boidBehaviour.LocalAreaRadius = Random.Range(0, boidLocalArea);
