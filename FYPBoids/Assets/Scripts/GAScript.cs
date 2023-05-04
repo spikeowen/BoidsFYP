@@ -171,12 +171,14 @@ public class GAScript
 
             for (int j = 0; j < parent1.boidGroup.Count; j++)
             {
-                //Child 1 has speed and no clumping radius of P1
+                //Child 1 has speed, fear factor and no clumping radius of P1
                 child1.boidGroup[j].SteeringSpeed = parent2.boidGroup[j].SteeringSpeed;
                 child1.boidGroup[j].LocalAreaRadius = parent2.boidGroup[j].LocalAreaRadius;
-                //Child 2 has speed and no clumping radius of P2
+                child1.boidGroup[j].PredatorFleeArea = parent2.boidGroup[j].PredatorFleeArea;
+                //Child 2 has speed, fear factor and no clumping radius of P2
                 child2.boidGroup[j].SteeringSpeed = parent1.boidGroup[j].SteeringSpeed;
                 child2.boidGroup[j].LocalAreaRadius = parent1.boidGroup[j].LocalAreaRadius;
+                child2.boidGroup[j].PredatorFleeArea = parent1.boidGroup[j].PredatorFleeArea;
             }
             //MUST ADD MUTATION FUNC BEFORE ADDING TO LIST
             child1 = Mutation(child1);
@@ -208,10 +210,11 @@ public class GAScript
                 bool clumpChanged = true;
                 bool localChanged = true;
                 bool fearChanged = true;
+                bool predAreaChanged = true;
 
                 while (changed == false)
                 {
-                    int random = Random.Range(0, 5);//Result = 0-4
+                    int random = Random.Range(0, 6);//Result = 0-5
                     switch (random)
                     {
                         case 0://Speed (Not above 10, while pred at 11)
@@ -268,9 +271,20 @@ public class GAScript
                                     fearChanged = false;
                                 break;
                             }
+                        case 5://PredArea (Probably don't go above 4)
+                            {
+                                if (child.boidGroup[i].PredatorFleeArea <= 4.0f)
+                                {
+                                    child.boidGroup[i].PredatorFleeArea += 0.1f;
+                                    changed = true;
+                                }
+                                else
+                                    predAreaChanged = false;
+                                break;
+                            }
                     }
 
-                    if (speedChanged == false && steeringChanged == false && clumpChanged == false && localChanged == false && fearChanged == false)
+                    if (speedChanged == false && steeringChanged == false && clumpChanged == false && localChanged == false && fearChanged == false && predAreaChanged == false)
                     {
                         changed = true;
                     }
@@ -341,7 +355,9 @@ public class GAScript
             RecordLine(result);
         }
 
-        float percentage = (totalSurvivors / totalInput) * 100;
+        float percentage = (float)totalSurvivors / (float)totalInput;
+        percentage = percentage * 100;
+        
         string result2 = "Total Survived: " + totalSurvivors.ToString() + "/" + totalInput.ToString() + " Percentage: " + percentage.ToString() + "%";
         RecordLine(result2);
 

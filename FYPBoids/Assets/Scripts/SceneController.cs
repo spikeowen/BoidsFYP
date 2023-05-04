@@ -13,19 +13,23 @@ public class SceneController : MonoBehaviour
 
     public List<BoidBehaviour> boidList;
     //List to store swarms as chromos
-    public List<Chromosome> chromoList;
+    private List<Chromosome> chromoList;
     //Ticker to regulate what swarm the next boid belongs to
     private int swarmIterator = 0;
 
     public List<BoidBehaviour> newGenList;
     //C# Rule: You can't call a method defined inside a class without creating an instance of that class
     //(Unless you declare the method static)
-    public GAScript GAInstance = new GAScript();
-    public float simReset;
+    private GAScript GAInstance = new GAScript();
+    private float simReset;
 
     [SerializeField]
     public bool tournamentMode = true;
     public bool rouletteMode = false;
+    public bool spawnBySwarm = false;
+    //Debug to see swarms better
+    public bool randomMode = true;
+
     public int spawnBoids = 100;
     public float boidSpeed = 10f;
     public float boidSteeringSpeed = 100f;
@@ -38,16 +42,16 @@ public class SceneController : MonoBehaviour
     //Number of swarms
     public int swarmCount = 10;
     //Fear of others/Clumping multiplier
-    public float fearFactor = 1;
-    //Debug to see swarms better
-    public bool randomMode = true;
+    public float fearFactor = 1f;
+    public float predatorFleeArea = 5f;
     //Timer to limit how long 1 simulation lasts for
     public float simTimer = 60.0f;
     public Text timerText;
     //Counter to know what generation the fish are on
     public int generationCount = 0;
     public Text generationText;
-    
+
+    private PredatorSceneController predatorSceneController;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +76,42 @@ public class SceneController : MonoBehaviour
                 swarmIterator = 0;
             }
         }
+
+        if (spawnBySwarm == true)
+        {
+            for (int i = 0; i < swarmCount; i++)
+            {
+                for (int j = 1; j < chromoList[i].boidGroup.Count; j++)
+                {
+                    chromoList[i].boidGroup[j] = chromoList[i].boidGroup[0];
+                }
+                //Debug.Log("Swarm Number: " + i.ToString());
+                //Debug.Log("Speed: " + chromoList[i].boidGroup[0].Speed);
+                //Debug.Log("Steering speed: " + chromoList[i].boidGroup[0].SteeringSpeed);
+                //Debug.Log("Clumping: " + chromoList[i].boidGroup[0].NoClumpingRadius);
+                //Debug.Log("Local Area: " + chromoList[i].boidGroup[0].LocalAreaRadius);
+            }
+
+            //Copy the overwritten chromos back into scene
+            chromoList.ToList().ForEach(i => newGenList.AddRange(i.boidGroup));
+            chromoList.Clear();
+            //Recreate scene's chromo list and refill with updated boid sets
+            for (int i = 0; i < swarmCount; i++)
+            {
+                chromoList.Add(GAInstance.GenerateChromo());
+            }
+
+            for (int i = 0; i < boidList.Count; i++)
+            {
+                boidList[i].gameObject.GetComponent<BoidBehaviour>().DeepCopy(newGenList[i]);
+                boidList[i].gameObject.SetActive(true);
+                chromoList[boidList[i].SwarmIndex].boidGroup.Add(boidList[i]);
+            }
+
+            newGenList.Clear();
+        }
+
+        predatorSceneController = GetComponent<PredatorSceneController>();
     }
 
     // Update is called once per frame
@@ -79,7 +119,7 @@ public class SceneController : MonoBehaviour
     {
         foreach (BoidBehaviour boid in boidList)
         {
-            boid.SimulateMovement(boidList, Time.deltaTime);
+            boid.SimulateMovement(boidList, Time.deltaTime, predatorSceneController.predatorList);
 
             //Keeps boids within set area, and loops them to the other side like pacman
             var boidPos = boid.transform.position;
@@ -188,6 +228,7 @@ public class SceneController : MonoBehaviour
 
             boidBehaviour.NoClumpingRadius = boidNoClumpingArea;
             boidBehaviour.FearFactor = Random.Range(0.5f, fearFactor + 0.5f);
+            boidBehaviour.PredatorFleeArea = Random.Range(0, predatorFleeArea);
         }
         else
         {
@@ -198,6 +239,7 @@ public class SceneController : MonoBehaviour
 
             boidBehaviour.NoClumpingRadius = boidNoClumpingArea;
             boidBehaviour.FearFactor = fearFactor;
+            boidBehaviour.PredatorFleeArea = predatorFleeArea;
         }
 
         //Set to swarm's colour for visibility

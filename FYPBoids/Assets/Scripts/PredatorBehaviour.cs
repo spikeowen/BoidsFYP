@@ -56,9 +56,10 @@ public class PredatorBehaviour : MonoBehaviour
                 //if boid is generally nearby - HUNT SWARM
                 else if (preyDistance < LocalAreaRadius)
                 {
+                    //Goes in the swarm's direction
                     alignmentDirection += boid.transform.forward;
                     alignmentCount++;
-
+                    //Goes towards swarm's center
                     cohesionDirection += boid.transform.position - transform.position;
                     cohesionCount++;
 
@@ -124,5 +125,15 @@ public class PredatorBehaviour : MonoBehaviour
     {
         other.gameObject.SetActive(false);
         //Debug.Log("Eating");
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, LocalAreaRadius);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, HuntAreaRadius);
+
     }
 }

@@ -19,6 +19,7 @@ public class BoidBehaviour : MonoBehaviour
     /// The boid's alert level for danger/anxiety of being in a group
     /// </summary>
     public float FearFactor { get; set; }
+    public float PredatorFleeArea { get; set; }
 
     public void DeepCopy(BoidBehaviour other)
     {
@@ -29,9 +30,10 @@ public class BoidBehaviour : MonoBehaviour
         NoClumpingRadius = other.NoClumpingRadius;
         LocalAreaRadius = other.LocalAreaRadius;
         FearFactor = other.FearFactor;
+        PredatorFleeArea = other.PredatorFleeArea;
     }
 
-    public void SimulateMovement(List<BoidBehaviour> other, float time)
+    public void SimulateMovement(List<BoidBehaviour> other, float time, List<PredatorBehaviour> other2)
     {
         //Steering vars
         var steering = Vector3.zero;
@@ -54,9 +56,20 @@ public class BoidBehaviour : MonoBehaviour
 
         foreach (BoidBehaviour boid in other)
         {
+            foreach (PredatorBehaviour predator in other2)
+            {
+                var preyDistance = Vector3.Distance(predator.transform.position, this.transform.position);
+
+                //if boid is within close proximity - BEING HUNTED
+                if (preyDistance < PredatorFleeArea)
+                {
+                    separationDirection += predator.transform.position - transform.position;
+                    separationCount++;
+                }
+            }
             //skip itself
             if (boid == this)
-                continue;
+            continue;
 
             var distance = Vector3.Distance(boid.transform.position, this.transform.position);
 
@@ -70,9 +83,10 @@ public class BoidBehaviour : MonoBehaviour
             //if another boid is generally nearby - ALIGNMENT + COHESION
             if (distance < LocalAreaRadius * FearFactor && boid.SwarmIndex == this.SwarmIndex)
             {
+                //Goes in the swarm's direction
                 alignmentDirection += boid.transform.forward;
                 alignmentCount++;
-
+                //Goes towards swarm's center
                 cohesionDirection += boid.transform.position - transform.position;
                 cohesionCount++;
 
@@ -120,6 +134,16 @@ public class BoidBehaviour : MonoBehaviour
 
         //move 
         transform.position += transform.TransformDirection(new Vector3(0, 0, Speed)) * time;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, LocalAreaRadius);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, PredatorFleeArea);
+
     }
 }
 
