@@ -85,8 +85,8 @@ public class SceneController : MonoBehaviour
                 {
                     chromoList[i].boidGroup[j] = chromoList[i].boidGroup[0];
                 }
-                //Debug.Log("Swarm Number: " + i.ToString());
-                //Debug.Log("Speed: " + chromoList[i].boidGroup[0].Speed);
+                Debug.Log("Swarm Number: " + i.ToString());
+                Debug.Log("Speed: " + chromoList[i].boidGroup[0].Speed);
                 //Debug.Log("Steering speed: " + chromoList[i].boidGroup[0].SteeringSpeed);
                 //Debug.Log("Clumping: " + chromoList[i].boidGroup[0].NoClumpingRadius);
                 //Debug.Log("Local Area: " + chromoList[i].boidGroup[0].LocalAreaRadius);
@@ -165,6 +165,7 @@ public class SceneController : MonoBehaviour
                 {
                     GAInstance.RecordLine("-----ROULETTE SELECTION-----");
                 }
+                GAInstance.RecordLine("Generation Number: " + generationCount.ToString());
                 GAInstance.RouletteSelection(chromoList);
                 chromoList = GAInstance.Crossover(GAInstance.BestChromoRoulette);
             }
@@ -174,6 +175,7 @@ public class SceneController : MonoBehaviour
                 {
                     GAInstance.RecordLine("-----RANKED SELECTION-----");
                 }
+                GAInstance.RecordLine("Generation Number: " + generationCount.ToString());
                 GAInstance.RankedSelection(chromoList);
                 chromoList = GAInstance.Crossover(GAInstance.BestChromoRank);
             }

@@ -56,12 +56,12 @@ public class PredatorBehaviour : MonoBehaviour
                 //if boid is generally nearby - HUNT SWARM
                 else if (preyDistance < LocalAreaRadius)
                 {
-                    //Goes in the swarm's direction
-                    alignmentDirection += boid.transform.forward;
-                    alignmentCount++;
-                    //Goes towards swarm's center
-                    cohesionDirection += boid.transform.position - transform.position;
-                    cohesionCount++;
+                    ////Goes in the swarm's direction
+                    //alignmentDirection += boid.transform.forward;
+                    //alignmentCount++;
+                    ////Goes towards swarm's center
+                    //cohesionDirection += boid.transform.position - transform.position;
+                    //cohesionCount++;
 
                     //identify leading boid
                     var angle = Vector3.Angle(boid.transform.position - transform.position, transform.forward);
