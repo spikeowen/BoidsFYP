@@ -61,7 +61,7 @@ public class BoidBehaviour : MonoBehaviour
                 var preyDistance = Vector3.Distance(predator.transform.position, this.transform.position);
 
                 //if boid is within close proximity - BEING HUNTED
-                if (preyDistance < PredatorFleeArea)
+                if (preyDistance < PredatorFleeArea * FearFactor)
                 {
                     separationDirection += predator.transform.position - transform.position;
                     separationCount++;
