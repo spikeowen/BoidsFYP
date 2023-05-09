@@ -587,7 +587,7 @@ MonoBehaviour:
   BoidPrefab: {fileID: -6720265601290861936, guid: eb1a620dbacc7534088b3aa8f659fb5a, type: 3}
   boidList: []
   newGenList: []
-  tournamentMode: 1
+  tournamentMode: 0
   rouletteMode: 0
   spawnBySwarm: 1
   randomMode: 1
@@ -695,7 +695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PredatorPrefab: {fileID: 4493183039398971317, guid: f015529449708da449c25485cc85551f, type: 3}
-  spawnPredators: 4
+  spawnPredators: 2
   predatorSpeed: 11
   predatorSteeringSpeed: 100
   predatorNoClumpingArea: 10
