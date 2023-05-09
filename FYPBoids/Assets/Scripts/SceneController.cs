@@ -4,8 +4,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-//Current STATUS: Program runs, boids don't reactivate and yet new gens have diff swarm scores
-//Need to pass boids back to overwrite and reactivate boids in scene
 
 public class SceneController : MonoBehaviour
 {
