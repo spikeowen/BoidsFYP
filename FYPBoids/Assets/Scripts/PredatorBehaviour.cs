@@ -15,6 +15,9 @@ public class PredatorBehaviour : MonoBehaviour
     public float AlignmentWeight = 0.6f;
     public float CohesionWeight = 0.0f;
 
+    public Vector3 StartingPosition { get; set; }
+    public Quaternion StartingRotation { get; set; }
+
     public void SimulateMovement(List<PredatorBehaviour> other, float time, List<BoidBehaviour> other2)
     {
         //Steering vars

@@ -27,6 +27,7 @@ public class SceneController : MonoBehaviour
     public bool spawnBySwarm = false;
     //Debug to see swarms better
     public bool randomMode = true;
+    public bool resetToSpawn = false;
 
     public int spawnBoids = 100;
     public float boidSpeed = 10f;
@@ -50,6 +51,7 @@ public class SceneController : MonoBehaviour
     public Text generationText;
 
     private PredatorSceneController predatorSceneController;
+    public bool simResetting = false; //KEEP FALSE AT START ELSE POINTLESS MOMENT DELAY FOR PREDATOR
 
     // Start is called before the first frame update
     void Start()
@@ -83,8 +85,8 @@ public class SceneController : MonoBehaviour
                 {
                     chromoList[i].boidGroup[j] = chromoList[i].boidGroup[0];
                 }
-                Debug.Log("Swarm Number: " + i.ToString());
-                Debug.Log("Speed: " + chromoList[i].boidGroup[0].Speed);
+                //Debug.Log("Swarm Number: " + i.ToString());
+                //Debug.Log("Speed: " + chromoList[i].boidGroup[0].Speed);
                 //Debug.Log("Steering speed: " + chromoList[i].boidGroup[0].SteeringSpeed);
                 //Debug.Log("Clumping: " + chromoList[i].boidGroup[0].NoClumpingRadius);
                 //Debug.Log("Local Area: " + chromoList[i].boidGroup[0].LocalAreaRadius);
@@ -194,6 +196,16 @@ public class SceneController : MonoBehaviour
                 chromoList[boidList[i].SwarmIndex].boidGroup.Add(boidList[i]);
             }
 
+            if (resetToSpawn == true)
+            {
+                simResetting = true;
+                foreach (BoidBehaviour boid in boidList)
+                {
+                    boid.transform.position = boid.StartingPosition;
+                    boid.transform.rotation = boid.StartingRotation;
+                }
+            }
+
             newGenList.Clear();
             generationCount++;
             simTimer = simReset;
@@ -216,6 +228,9 @@ public class SceneController : MonoBehaviour
             swarmCount = 1;
         else if (swarmCount > 10)
             swarmCount = 10;
+
+        boidBehaviour.StartingPosition = boidInstance.transform.position;
+        boidBehaviour.StartingRotation = boidInstance.transform.rotation;
 
         //Swarm index, sets what swarm it should belong to
         //Note to self: .Range is inclusive of minimum, exclusive of maximum

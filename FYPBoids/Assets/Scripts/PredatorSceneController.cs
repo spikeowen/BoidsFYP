@@ -63,6 +63,17 @@ public class PredatorSceneController : MonoBehaviour
 
             predator.transform.position = predatorPos;
         }
+
+        if (boidSceneController.simResetting == true)
+        {
+            foreach (PredatorBehaviour predator in predatorList)
+            {
+                predator.transform.position = predator.StartingPosition;
+                predator.transform.rotation = predator.StartingRotation;
+            }
+            boidSceneController.simResetting = false;
+            Debug.Log("Shark Should Reset");
+        }
     }
 
     private void SpawnPredator(GameObject prefab)
@@ -75,6 +86,8 @@ public class PredatorSceneController : MonoBehaviour
 
         var predatorBehaviour = predatorInstance.GetComponent<PredatorBehaviour>();
 
+        predatorBehaviour.StartingPosition = predatorInstance.transform.localPosition;
+        predatorBehaviour.StartingRotation = predatorInstance.transform.localRotation;
 
         //Note: .Range is inclusive of minimum, exclusive of maximum
         predatorBehaviour.Speed = predatorSpeed;

@@ -21,6 +21,9 @@ public class BoidBehaviour : MonoBehaviour
     public float FearFactor { get; set; }
     public float PredatorFleeArea { get; set; }
 
+    public Vector3 StartingPosition { get; set; }
+    public Quaternion StartingRotation { get; set; }
+
     public void DeepCopy(BoidBehaviour other)
     {
         //Swarm of child boid doesn't matter as it messes up after selection

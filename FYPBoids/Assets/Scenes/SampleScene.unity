@@ -591,6 +591,7 @@ MonoBehaviour:
   rouletteMode: 0
   spawnBySwarm: 1
   randomMode: 1
+  resetToSpawn: 1
   spawnBoids: 100
   boidSpeed: 10
   boidSteeringSpeed: 100
@@ -604,6 +605,7 @@ MonoBehaviour:
   timerText: {fileID: 689761201}
   generationCount: 0
   generationText: {fileID: 1838348932}
+  simResetting: 0
 --- !u!65 &993517186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -695,7 +697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PredatorPrefab: {fileID: 4493183039398971317, guid: f015529449708da449c25485cc85551f, type: 3}
-  spawnPredators: 2
+  spawnPredators: 4
   predatorSpeed: 11
   predatorSteeringSpeed: 100
   predatorNoClumpingArea: 10

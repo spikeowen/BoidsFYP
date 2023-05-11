@@ -1,0 +1,783 @@
+-----ROULETTE SELECTION-----
+Generation Number: 0
+------------------------------
+Swarm No: 0 Swarm Score: 4
+Swarm No: 1 Swarm Score: 7
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 6
+Swarm No: 4 Swarm Score: 9
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 5
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 4
+Total Survived: 59/100 Percentage: 59%
+Generation Number: 1
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 8
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 8
+Swarm No: 4 Swarm Score: 6
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 9
+Swarm No: 8 Swarm Score: 4
+Swarm No: 9 Swarm Score: 7
+Total Survived: 64/100 Percentage: 64%
+Generation Number: 2
+------------------------------
+Swarm No: 0 Swarm Score: 7
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 9
+Swarm No: 4 Swarm Score: 8
+Swarm No: 5 Swarm Score: 8
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 6
+Total Survived: 68/100 Percentage: 68%
+Generation Number: 3
+------------------------------
+Swarm No: 0 Swarm Score: 5
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 3
+Swarm No: 4 Swarm Score: 9
+Swarm No: 5 Swarm Score: 8
+Swarm No: 6 Swarm Score: 8
+Swarm No: 7 Swarm Score: 5
+Swarm No: 8 Swarm Score: 8
+Swarm No: 9 Swarm Score: 3
+Total Survived: 62/100 Percentage: 62%
+Generation Number: 4
+------------------------------
+Swarm No: 0 Swarm Score: 3
+Swarm No: 1 Swarm Score: 8
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 5
+Swarm No: 4 Swarm Score: 7
+Swarm No: 5 Swarm Score: 7
+Swarm No: 6 Swarm Score: 8
+Swarm No: 7 Swarm Score: 8
+Swarm No: 8 Swarm Score: 8
+Swarm No: 9 Swarm Score: 9
+Total Survived: 68/100 Percentage: 68%
+Generation Number: 5
+------------------------------
+Swarm No: 0 Swarm Score: 3
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 8
+Swarm No: 4 Swarm Score: 7
+Swarm No: 5 Swarm Score: 7
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 5
+Swarm No: 9 Swarm Score: 7
+Total Survived: 62/100 Percentage: 62%
+Generation Number: 6
+------------------------------
+Swarm No: 0 Swarm Score: 5
+Swarm No: 1 Swarm Score: 9
+Swarm No: 2 Swarm Score: 8
+Swarm No: 3 Swarm Score: 7
+Swarm No: 4 Swarm Score: 6
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 7
+Swarm No: 7 Swarm Score: 5
+Swarm No: 8 Swarm Score: 6
+Swarm No: 9 Swarm Score: 8
+Total Survived: 66/100 Percentage: 66%
+Generation Number: 7
+------------------------------
+Swarm No: 0 Swarm Score: 8
+Swarm No: 1 Swarm Score: 10
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 9
+Swarm No: 4 Swarm Score: 8
+Swarm No: 5 Swarm Score: 4
+Swarm No: 6 Swarm Score: 7
+Swarm No: 7 Swarm Score: 3
+Swarm No: 8 Swarm Score: 9
+Swarm No: 9 Swarm Score: 6
+Total Survived: 69/100 Percentage: 69%
+Generation Number: 8
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 8
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 6
+Swarm No: 4 Swarm Score: 4
+Swarm No: 5 Swarm Score: 4
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 7
+Swarm No: 8 Swarm Score: 8
+Swarm No: 9 Swarm Score: 7
+Total Survived: 62/100 Percentage: 62%
+Generation Number: 9
+------------------------------
+Swarm No: 0 Swarm Score: 8
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 7
+Swarm No: 4 Swarm Score: 5
+Swarm No: 5 Swarm Score: 7
+Swarm No: 6 Swarm Score: 4
+Swarm No: 7 Swarm Score: 8
+Swarm No: 8 Swarm Score: 9
+Swarm No: 9 Swarm Score: 7
+Total Survived: 67/100 Percentage: 67%
+Generation Number: 10
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 5
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 9
+Swarm No: 4 Swarm Score: 9
+Swarm No: 5 Swarm Score: 3
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 5
+Swarm No: 8 Swarm Score: 4
+Swarm No: 9 Swarm Score: 8
+Total Survived: 61/100 Percentage: 61%
+Generation Number: 11
+------------------------------
+Swarm No: 0 Swarm Score: 4
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 5
+Swarm No: 4 Swarm Score: 6
+Swarm No: 5 Swarm Score: 8
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 8
+Swarm No: 8 Swarm Score: 9
+Swarm No: 9 Swarm Score: 8
+Total Survived: 65/100 Percentage: 65%
+Generation Number: 12
+------------------------------
+Swarm No: 0 Swarm Score: 4
+Swarm No: 1 Swarm Score: 7
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 3
+Swarm No: 4 Swarm Score: 4
+Swarm No: 5 Swarm Score: 8
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 9
+Swarm No: 8 Swarm Score: 6
+Swarm No: 9 Swarm Score: 7
+Total Survived: 60/100 Percentage: 60%
+Generation Number: 13
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 8
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 8
+Swarm No: 4 Swarm Score: 8
+Swarm No: 5 Swarm Score: 8
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 9
+Swarm No: 9 Swarm Score: 8
+Total Survived: 72/100 Percentage: 72%
+Generation Number: 14
+------------------------------
+Swarm No: 0 Swarm Score: 7
+Swarm No: 1 Swarm Score: 8
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 8
+Swarm No: 4 Swarm Score: 6
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 4
+Swarm No: 7 Swarm Score: 8
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 6
+Total Survived: 64/100 Percentage: 64%
+Generation Number: 15
+------------------------------
+Swarm No: 0 Swarm Score: 7
+Swarm No: 1 Swarm Score: 9
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 7
+Swarm No: 4 Swarm Score: 8
+Swarm No: 5 Swarm Score: 6
+Swarm No: 6 Swarm Score: 8
+Swarm No: 7 Swarm Score: 9
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 6
+Total Survived: 74/100 Percentage: 74%
+Generation Number: 16
+------------------------------
+Swarm No: 0 Swarm Score: 8
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 9
+Swarm No: 3 Swarm Score: 5
+Swarm No: 4 Swarm Score: 6
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 9
+Swarm No: 7 Swarm Score: 7
+Swarm No: 8 Swarm Score: 4
+Swarm No: 9 Swarm Score: 9
+Total Survived: 68/100 Percentage: 68%
+Generation Number: 17
+------------------------------
+Swarm No: 0 Swarm Score: 5
+Swarm No: 1 Swarm Score: 10
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 6
+Swarm No: 4 Swarm Score: 7
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 4
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 8
+Swarm No: 9 Swarm Score: 7
+Total Survived: 65/100 Percentage: 65%
+Generation Number: 18
+------------------------------
+Swarm No: 0 Swarm Score: 5
+Swarm No: 1 Swarm Score: 7
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 6
+Swarm No: 4 Swarm Score: 7
+Swarm No: 5 Swarm Score: 4
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 5
+Swarm No: 8 Swarm Score: 6
+Swarm No: 9 Swarm Score: 10
+Total Survived: 61/100 Percentage: 61%
+Generation Number: 19
+------------------------------
+Swarm No: 0 Swarm Score: 7
+Swarm No: 1 Swarm Score: 10
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 8
+Swarm No: 4 Swarm Score: 4
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 7
+Swarm No: 7 Swarm Score: 8
+Swarm No: 8 Swarm Score: 9
+Swarm No: 9 Swarm Score: 6
+Total Survived: 70/100 Percentage: 70%
+-----TOURNAMENT SELECTION-----
+Generation Number: 0
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 4
+Swarm No: 3 Swarm Score: 4
+Swarm No: 4 Swarm Score: 7
+Swarm No: 5 Swarm Score: 7
+Swarm No: 6 Swarm Score: 7
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 8
+Swarm No: 9 Swarm Score: 6
+Total Survived: 61/100 Percentage: 61%
+Generation Number: 1
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 5
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 5
+Swarm No: 4 Swarm Score: 6
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 7
+Swarm No: 8 Swarm Score: 8
+Swarm No: 9 Swarm Score: 6
+Total Survived: 60/100 Percentage: 60%
+Generation Number: 2
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 4
+Swarm No: 4 Swarm Score: 5
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 7
+Swarm No: 7 Swarm Score: 7
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 8
+Total Survived: 61/100 Percentage: 61%
+Generation Number: 3
+------------------------------
+Swarm No: 0 Swarm Score: 8
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 6
+Swarm No: 4 Swarm Score: 8
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 7
+Swarm No: 7 Swarm Score: 7
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 6
+Total Survived: 66/100 Percentage: 66%
+Generation Number: 4
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 7
+Swarm No: 2 Swarm Score: 8
+Swarm No: 3 Swarm Score: 8
+Swarm No: 4 Swarm Score: 4
+Swarm No: 5 Swarm Score: 7
+Swarm No: 6 Swarm Score: 7
+Swarm No: 7 Swarm Score: 7
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 7
+Total Survived: 68/100 Percentage: 68%
+Generation Number: 5
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 6
+Swarm No: 4 Swarm Score: 6
+Swarm No: 5 Swarm Score: 8
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 9
+Swarm No: 9 Swarm Score: 4
+Total Survived: 63/100 Percentage: 63%
+Generation Number: 6
+------------------------------
+Swarm No: 0 Swarm Score: 9
+Swarm No: 1 Swarm Score: 5
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 5
+Swarm No: 4 Swarm Score: 5
+Swarm No: 5 Swarm Score: 7
+Swarm No: 6 Swarm Score: 7
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 6
+Swarm No: 9 Swarm Score: 4
+Total Survived: 59/100 Percentage: 59%
+Generation Number: 7
+------------------------------
+Swarm No: 0 Swarm Score: 4
+Swarm No: 1 Swarm Score: 8
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 4
+Swarm No: 4 Swarm Score: 7
+Swarm No: 5 Swarm Score: 6
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 5
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 3
+Total Survived: 56/100 Percentage: 56%
+Generation Number: 8
+------------------------------
+Swarm No: 0 Swarm Score: 4
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 6
+Swarm No: 4 Swarm Score: 4
+Swarm No: 5 Swarm Score: 6
+Swarm No: 6 Swarm Score: 7
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 5
+Total Survived: 58/100 Percentage: 58%
+Generation Number: 9
+------------------------------
+Swarm No: 0 Swarm Score: 9
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 8
+Swarm No: 3 Swarm Score: 7
+Swarm No: 4 Swarm Score: 5
+Swarm No: 5 Swarm Score: 4
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 9
+Swarm No: 8 Swarm Score: 8
+Swarm No: 9 Swarm Score: 10
+Total Survived: 72/100 Percentage: 72%
+Generation Number: 10
+------------------------------
+Swarm No: 0 Swarm Score: 9
+Swarm No: 1 Swarm Score: 9
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 6
+Swarm No: 4 Swarm Score: 7
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 7
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 3
+Swarm No: 9 Swarm Score: 8
+Total Survived: 67/100 Percentage: 67%
+Generation Number: 11
+------------------------------
+Swarm No: 0 Swarm Score: 7
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 4
+Swarm No: 4 Swarm Score: 8
+Swarm No: 5 Swarm Score: 8
+Swarm No: 6 Swarm Score: 8
+Swarm No: 7 Swarm Score: 7
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 8
+Total Survived: 70/100 Percentage: 70%
+Generation Number: 12
+------------------------------
+Swarm No: 0 Swarm Score: 7
+Swarm No: 1 Swarm Score: 4
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 8
+Swarm No: 4 Swarm Score: 7
+Swarm No: 5 Swarm Score: 6
+Swarm No: 6 Swarm Score: 7
+Swarm No: 7 Swarm Score: 7
+Swarm No: 8 Swarm Score: 8
+Swarm No: 9 Swarm Score: 6
+Total Survived: 66/100 Percentage: 66%
+Generation Number: 13
+------------------------------
+Swarm No: 0 Swarm Score: 7
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 4
+Swarm No: 4 Swarm Score: 5
+Swarm No: 5 Swarm Score: 6
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 5
+Swarm No: 8 Swarm Score: 5
+Swarm No: 9 Swarm Score: 8
+Total Survived: 58/100 Percentage: 58%
+Generation Number: 14
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 8
+Swarm No: 3 Swarm Score: 8
+Swarm No: 4 Swarm Score: 8
+Swarm No: 5 Swarm Score: 6
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 5
+Swarm No: 8 Swarm Score: 6
+Swarm No: 9 Swarm Score: 9
+Total Survived: 68/100 Percentage: 68%
+Generation Number: 15
+------------------------------
+Swarm No: 0 Swarm Score: 5
+Swarm No: 1 Swarm Score: 5
+Swarm No: 2 Swarm Score: 10
+Swarm No: 3 Swarm Score: 7
+Swarm No: 4 Swarm Score: 6
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 5
+Swarm No: 8 Swarm Score: 6
+Swarm No: 9 Swarm Score: 7
+Total Survived: 62/100 Percentage: 62%
+Generation Number: 16
+------------------------------
+Swarm No: 0 Swarm Score: 7
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 7
+Swarm No: 4 Swarm Score: 7
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 4
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 6
+Swarm No: 9 Swarm Score: 5
+Total Survived: 58/100 Percentage: 58%
+Generation Number: 17
+------------------------------
+Swarm No: 0 Swarm Score: 7
+Swarm No: 1 Swarm Score: 4
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 7
+Swarm No: 4 Swarm Score: 7
+Swarm No: 5 Swarm Score: 7
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 5
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 7
+Total Survived: 63/100 Percentage: 63%
+Generation Number: 18
+------------------------------
+Swarm No: 0 Swarm Score: 8
+Swarm No: 1 Swarm Score: 3
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 6
+Swarm No: 4 Swarm Score: 9
+Swarm No: 5 Swarm Score: 7
+Swarm No: 6 Swarm Score: 8
+Swarm No: 7 Swarm Score: 7
+Swarm No: 8 Swarm Score: 6
+Swarm No: 9 Swarm Score: 6
+Total Survived: 66/100 Percentage: 66%
+Generation Number: 19
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 7
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 6
+Swarm No: 4 Swarm Score: 8
+Swarm No: 5 Swarm Score: 9
+Swarm No: 6 Swarm Score: 9
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 6
+Swarm No: 9 Swarm Score: 4
+Total Survived: 68/100 Percentage: 68%
+-----RANKED SELECTION-----
+Generation Number: 0
+------------------------------
+Swarm No: 0 Swarm Score: 3
+Swarm No: 1 Swarm Score: 5
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 5
+Swarm No: 4 Swarm Score: 4
+Swarm No: 5 Swarm Score: 6
+Swarm No: 6 Swarm Score: 4
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 4
+Swarm No: 9 Swarm Score: 8
+Total Survived: 52/100 Percentage: 52%
+Generation Number: 1
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 4
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 7
+Swarm No: 4 Swarm Score: 6
+Swarm No: 5 Swarm Score: 6
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 9
+Swarm No: 9 Swarm Score: 3
+Total Survived: 59/100 Percentage: 59%
+Generation Number: 2
+------------------------------
+Swarm No: 0 Swarm Score: 5
+Swarm No: 1 Swarm Score: 5
+Swarm No: 2 Swarm Score: 4
+Swarm No: 3 Swarm Score: 2
+Swarm No: 4 Swarm Score: 5
+Swarm No: 5 Swarm Score: 3
+Swarm No: 6 Swarm Score: 4
+Swarm No: 7 Swarm Score: 3
+Swarm No: 8 Swarm Score: 5
+Swarm No: 9 Swarm Score: 6
+Total Survived: 42/100 Percentage: 42%
+Generation Number: 3
+------------------------------
+Swarm No: 0 Swarm Score: 4
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 4
+Swarm No: 4 Swarm Score: 6
+Swarm No: 5 Swarm Score: 7
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 4
+Swarm No: 9 Swarm Score: 5
+Total Survived: 52/100 Percentage: 52%
+Generation Number: 4
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 5
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 7
+Swarm No: 4 Swarm Score: 7
+Swarm No: 5 Swarm Score: 7
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 8
+Swarm No: 8 Swarm Score: 5
+Swarm No: 9 Swarm Score: 6
+Total Survived: 62/100 Percentage: 62%
+Generation Number: 5
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 7
+Swarm No: 2 Swarm Score: 4
+Swarm No: 3 Swarm Score: 4
+Swarm No: 4 Swarm Score: 6
+Swarm No: 5 Swarm Score: 6
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 3
+Swarm No: 8 Swarm Score: 6
+Swarm No: 9 Swarm Score: 7
+Total Survived: 54/100 Percentage: 54%
+Generation Number: 6
+------------------------------
+Swarm No: 0 Swarm Score: 4
+Swarm No: 1 Swarm Score: 7
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 7
+Swarm No: 4 Swarm Score: 6
+Swarm No: 5 Swarm Score: 6
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 7
+Total Survived: 62/100 Percentage: 62%
+Generation Number: 7
+------------------------------
+Swarm No: 0 Swarm Score: 7
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 7
+Swarm No: 3 Swarm Score: 5
+Swarm No: 4 Swarm Score: 3
+Swarm No: 5 Swarm Score: 4
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 3
+Total Survived: 53/100 Percentage: 53%
+Generation Number: 8
+------------------------------
+Swarm No: 0 Swarm Score: 4
+Swarm No: 1 Swarm Score: 1
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 2
+Swarm No: 4 Swarm Score: 4
+Swarm No: 5 Swarm Score: 4
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 4
+Swarm No: 8 Swarm Score: 6
+Swarm No: 9 Swarm Score: 5
+Total Survived: 41/100 Percentage: 41%
+Generation Number: 9
+------------------------------
+Swarm No: 0 Swarm Score: 5
+Swarm No: 1 Swarm Score: 1
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 5
+Swarm No: 4 Swarm Score: 8
+Swarm No: 5 Swarm Score: 3
+Swarm No: 6 Swarm Score: 3
+Swarm No: 7 Swarm Score: 3
+Swarm No: 8 Swarm Score: 3
+Swarm No: 9 Swarm Score: 2
+Total Survived: 38/100 Percentage: 38%
+Generation Number: 10
+------------------------------
+Swarm No: 0 Swarm Score: 3
+Swarm No: 1 Swarm Score: 5
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 3
+Swarm No: 4 Swarm Score: 6
+Swarm No: 5 Swarm Score: 7
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 6
+Swarm No: 9 Swarm Score: 5
+Total Survived: 52/100 Percentage: 52%
+Generation Number: 11
+------------------------------
+Swarm No: 0 Swarm Score: 4
+Swarm No: 1 Swarm Score: 3
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 7
+Swarm No: 4 Swarm Score: 7
+Swarm No: 5 Swarm Score: 8
+Swarm No: 6 Swarm Score: 4
+Swarm No: 7 Swarm Score: 8
+Swarm No: 8 Swarm Score: 5
+Swarm No: 9 Swarm Score: 4
+Total Survived: 55/100 Percentage: 55%
+Generation Number: 12
+------------------------------
+Swarm No: 0 Swarm Score: 3
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 3
+Swarm No: 3 Swarm Score: 7
+Swarm No: 4 Swarm Score: 3
+Swarm No: 5 Swarm Score: 6
+Swarm No: 6 Swarm Score: 3
+Swarm No: 7 Swarm Score: 7
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 7
+Total Survived: 52/100 Percentage: 52%
+Generation Number: 13
+------------------------------
+Swarm No: 0 Swarm Score: 5
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 5
+Swarm No: 4 Swarm Score: 4
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 8
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 6
+Total Survived: 56/100 Percentage: 56%
+Generation Number: 14
+------------------------------
+Swarm No: 0 Swarm Score: 2
+Swarm No: 1 Swarm Score: 5
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 7
+Swarm No: 4 Swarm Score: 7
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 5
+Swarm No: 7 Swarm Score: 5
+Swarm No: 8 Swarm Score: 5
+Swarm No: 9 Swarm Score: 2
+Total Survived: 48/100 Percentage: 48%
+Generation Number: 15
+------------------------------
+Swarm No: 0 Swarm Score: 4
+Swarm No: 1 Swarm Score: 4
+Swarm No: 2 Swarm Score: 6
+Swarm No: 3 Swarm Score: 3
+Swarm No: 4 Swarm Score: 5
+Swarm No: 5 Swarm Score: 6
+Swarm No: 6 Swarm Score: 7
+Swarm No: 7 Swarm Score: 4
+Swarm No: 8 Swarm Score: 4
+Swarm No: 9 Swarm Score: 5
+Total Survived: 48/100 Percentage: 48%
+Generation Number: 16
+------------------------------
+Swarm No: 0 Swarm Score: 3
+Swarm No: 1 Swarm Score: 5
+Swarm No: 2 Swarm Score: 5
+Swarm No: 3 Swarm Score: 6
+Swarm No: 4 Swarm Score: 5
+Swarm No: 5 Swarm Score: 4
+Swarm No: 6 Swarm Score: 2
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 5
+Swarm No: 9 Swarm Score: 4
+Total Survived: 45/100 Percentage: 45%
+Generation Number: 17
+------------------------------
+Swarm No: 0 Swarm Score: 6
+Swarm No: 1 Swarm Score: 4
+Swarm No: 2 Swarm Score: 4
+Swarm No: 3 Swarm Score: 6
+Swarm No: 4 Swarm Score: 5
+Swarm No: 5 Swarm Score: 5
+Swarm No: 6 Swarm Score: 3
+Swarm No: 7 Swarm Score: 5
+Swarm No: 8 Swarm Score: 5
+Swarm No: 9 Swarm Score: 5
+Total Survived: 48/100 Percentage: 48%
+Generation Number: 18
+------------------------------
+Swarm No: 0 Swarm Score: 7
+Swarm No: 1 Swarm Score: 5
+Swarm No: 2 Swarm Score: 8
+Swarm No: 3 Swarm Score: 6
+Swarm No: 4 Swarm Score: 8
+Swarm No: 5 Swarm Score: 8
+Swarm No: 6 Swarm Score: 6
+Swarm No: 7 Swarm Score: 4
+Swarm No: 8 Swarm Score: 7
+Swarm No: 9 Swarm Score: 6
+Total Survived: 65/100 Percentage: 65%
+Generation Number: 19
+------------------------------
+Swarm No: 0 Swarm Score: 5
+Swarm No: 1 Swarm Score: 6
+Swarm No: 2 Swarm Score: 2
+Swarm No: 3 Swarm Score: 2
+Swarm No: 4 Swarm Score: 4
+Swarm No: 5 Swarm Score: 7
+Swarm No: 6 Swarm Score: 4
+Swarm No: 7 Swarm Score: 6
+Swarm No: 8 Swarm Score: 4
+Swarm No: 9 Swarm Score: 5
+Total Survived: 45/100 Percentage: 45%
